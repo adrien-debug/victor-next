@@ -45,8 +45,9 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/victor-assets/victor-presence.png"
-            alt=""
+            alt="Victor companion intelligence — field operative"
             fill
+            sizes="100vw"
             className="object-cover opacity-40"
             style={{ filter: "grayscale(0.5) brightness(0.6)" }}
             priority
@@ -75,8 +76,8 @@ export default function Home() {
             Not an assistant. Not a tool. A living extension of your intent.
           </p>
           <div className="hero-ctas">
-            <button className="btn-victor primary">Initialize Victor</button>
-            <button className="btn-victor secondary">Watch Manifesto</button>
+            <button type="button" className="btn-victor primary">Initialize Victor</button>
+            <button type="button" className="btn-victor secondary">Watch Manifesto</button>
           </div>
         </div>
 
@@ -105,19 +106,22 @@ export default function Home() {
 
           <div className="cards-grid">
             <VisionCard
-              image="/victor-assets/victor-presence.png"
+              image="/victor-assets/victor-law.png"
+              alt="Law enforcement officer using Victor in the field"
               label="01 // LAW ENFORCEMENT"
               title="Real-time awareness"
               description="Victor listens, analyzes, and surfaces what matters instantly — helping decisions in critical situations."
             />
             <VisionCard
               image="/victor-assets/victor-medical.png"
+              alt="Medical professional assisted by Victor in a clinical setting"
               label="02 // MEDICAL"
               title="Clarity under pressure"
               description="From patient context to knowledge recall, Victor assists doctors when seconds matter."
             />
             <VisionCard
               image="/victor-assets/victor-everyday.png"
+              alt="Person using Victor for everyday decision-making"
               label="03 // EVERYDAY LIFE"
               title="Augmented thinking"
               description="Conversations, decisions, planning — Victor enhances how you think and act every day."
@@ -130,10 +134,10 @@ export default function Home() {
       <section className="manifesto">
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="reveal">
-            <p className="mask-text manifesto-text">
+            <blockquote className="mask-text manifesto-text">
               &ldquo;Software was a tool. Victor is a partner. We don&rsquo;t
               build features anymore. We build consciousness.&rdquo;
-            </p>
+            </blockquote>
             <div className="manifesto-bar">
               <div className="line" />
               <span
@@ -243,11 +247,13 @@ export default function Home() {
 
 function VisionCard({
   image,
+  alt,
   label,
   title,
   description,
 }: {
   image: string;
+  alt: string;
   label: string;
   title: string;
   description: string;
@@ -256,8 +262,9 @@ function VisionCard({
     <div className="vision-card reveal">
       <Image
         src={image}
-        alt=""
+        alt={alt}
         fill
+        sizes="(max-width: 1024px) 100vw, 33vw"
         className="object-cover opacity-50 transition-transform duration-[1200ms]"
         style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
       />

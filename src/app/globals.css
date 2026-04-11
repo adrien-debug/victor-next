@@ -190,7 +190,7 @@ body {
 .btn-victor.secondary {
   background: transparent;
   color: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .scroll-ind {
@@ -368,6 +368,7 @@ body {
   background: var(--accent);
   border-radius: 50%;
   box-shadow: 0 0 20px var(--accent);
+  transform: translate(-50%, -50%);
 }
 .orbit-label {
   position: absolute;
@@ -411,7 +412,7 @@ footer .links a:hover {
 footer .copy {
   margin-top: 80px;
   font-size: 12px;
-  color: #334155;
+  color: var(--text-muted);
 }
 
 /* ─── PROGRESS BAR ─── */
@@ -424,6 +425,13 @@ footer .copy {
   z-index: 1000;
   transition: width 0.1s linear;
   width: 0;
+}
+
+/* ─── FOCUS ─── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 /* ─── RESPONSIVE ─── */
@@ -451,7 +459,24 @@ footer .copy {
     flex-direction: column;
     align-items: center;
   }
+  .btn-victor {
+    width: 100%;
+    max-width: 320px;
+  }
+  .manifesto {
+    padding: 100px 0;
+  }
   .manifesto-text {
     font-size: 28px;
+  }
+  .tech {
+    padding: 80px 0;
+  }
+  footer {
+    padding: 80px 0 40px;
+  }
+  footer .links {
+    flex-wrap: wrap;
+    gap: 24px;
   }
 }
