@@ -190,7 +190,7 @@ body {
 .btn-victor.secondary {
   background: transparent;
   color: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .scroll-ind {
@@ -237,6 +237,9 @@ body {
 .vision-card:hover {
   transform: scale(1.02);
   border-color: rgba(94, 234, 212, 0.3);
+}
+.vision-card:hover img {
+  transform: scale(1.05);
 }
 .vision-card .overlay {
   position: absolute;
@@ -368,6 +371,7 @@ body {
   background: var(--accent);
   border-radius: 50%;
   box-shadow: 0 0 20px var(--accent);
+  transform: translate(-50%, -50%);
 }
 .orbit-label {
   position: absolute;
@@ -411,7 +415,7 @@ footer .links a:hover {
 footer .copy {
   margin-top: 80px;
   font-size: 12px;
-  color: #334155;
+  color: var(--text-muted);
 }
 
 /* ─── PROGRESS BAR ─── */
@@ -426,10 +430,46 @@ footer .copy {
   width: 0;
 }
 
+/* ─── NAVBAR ─── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 64px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+.navbar.scrolled {
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(12px);
+}
+.navbar-logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.navbar-cta {
+  padding: 10px 24px;
+  font-size: 14px;
+}
+
+/* ─── FOCUS ─── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   .cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .tech-inner {
     grid-template-columns: 1fr;
@@ -440,6 +480,12 @@ footer .copy {
   }
 }
 @media (max-width: 768px) {
+  .navbar-cta {
+    display: none;
+  }
+  .navbar {
+    padding: 0 24px;
+  }
   .hero h1 {
     font-size: 42px;
     letter-spacing: -2px;
@@ -451,7 +497,46 @@ footer .copy {
     flex-direction: column;
     align-items: center;
   }
+  .btn-victor {
+    width: 100%;
+    max-width: 320px;
+  }
+  .hero-eyebrow {
+    letter-spacing: 4px;
+  }
+  .vision {
+    padding: 80px 0;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .vision-card {
+    height: 320px;
+  }
+  .manifesto {
+    padding: 100px 0;
+  }
   .manifesto-text {
     font-size: 28px;
+  }
+  .tech {
+    padding: 80px 0;
+  }
+  footer {
+    padding: 80px 0 40px;
+  }
+  footer .links {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .manifesto-bar {
+    flex-wrap: wrap;
   }
 }
