@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* ═══ VISION ═══ */}
       <section className="vision">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+        <div className="vision-inner">
           <div className="reveal">
             <h2 className="mask-text">Built for the critical.</h2>
           </div>
