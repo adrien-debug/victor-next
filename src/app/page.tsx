@@ -123,7 +123,7 @@ export default function Home() {
 
           <div className="cards-grid">
             <VisionCard
-              image="/victor-assets/victor-law.png"
+              image="/victor-assets/victor-presence.png"
               alt="Law enforcement officer using Victor in the field"
               label="01 // LAW ENFORCEMENT"
               title="Real-time awareness"
