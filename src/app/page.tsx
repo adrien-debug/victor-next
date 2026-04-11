@@ -26,6 +26,15 @@ export default function Home() {
         document.documentElement.clientHeight;
       const bar = document.getElementById("progress");
       if (bar) bar.style.width = (s / h) * 100 + "%";
+
+      const nav = document.getElementById("navbar");
+      if (nav) {
+        if (s > 80) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      }
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -39,6 +48,14 @@ export default function Home() {
     <>
       <div className="noise" />
       <div id="progress" />
+
+      {/* ═══ NAVBAR ═══ */}
+      <nav id="navbar" className="navbar">
+        <span className="mask-text navbar-logo">Victor</span>
+        <button type="button" className="btn-victor primary navbar-cta">
+          Initialize Victor
+        </button>
+      </nav>
 
       {/* ═══ HERO ═══ */}
       <section className="hero">
@@ -99,7 +116,7 @@ export default function Home() {
 
       {/* ═══ VISION ═══ */}
       <section className="vision">
-        <div className="mx-auto max-w-[1400px] px-10">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <div className="reveal">
             <h2 className="mask-text">Built for the critical.</h2>
           </div>
