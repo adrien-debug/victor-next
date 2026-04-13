@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Serveur local : **http://localhost:3010**
+Serveur local : **http://localhost:3310**
 
 ## Stack
 
@@ -21,9 +21,9 @@ Serveur local : **http://localhost:3010**
 ## Scripts
 
 ```bash
-npm run dev      # Serveur de développement (port 3010)
+npm run dev      # Serveur de développement (port 3310)
 npm run build    # Build de production
-npm run start    # Serveur de production (port 3010)
+npm run start    # Serveur de production (port 3310)
 npm run lint     # Linter ESLint
 ```
 
@@ -66,7 +66,7 @@ victor-next/
 
 ## Configuration
 
-Port fixe : **3010** (ne jamais changer)
+Port fixe : **3310** (ne jamais changer)
 
 ## Design System
 
